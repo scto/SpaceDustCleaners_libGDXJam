@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Gradle: com.badlogicgames.ashley:ashley:1.7.0">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.ashley/ashley/1.7.0/a7c4083c0a42027a3c03ba7ccecef6cbe1c5f0a4/ashley-1.7.0.jar" />
+  </library>
+  <library name="Gradle: com.badlogicgames.box2dlights:box2dlights:1.4">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.box2dlights/box2dlights/1.4/3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd/box2dlights-1.4.jar" />
+  </library>
+  <library name="Gradle: com.badlogicgames.gdx:gdx:1.7.2">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.7.2/ccf86a454b5ce7029c243da22f432f2edca0a34e/gdx-1.7.2.jar" />
+  </library>
+  <library name="Gradle: com.badlogicgames.gdx:gdx-ai:1.7.0">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-ai/1.7.0/e74a876dbaabe28abe8160d677b0a67b61c7dfac/gdx-ai-1.7.0.jar" />
+  </library>
+  <library name="Gradle: com.badlogicgames.gdx:gdx-backend-lwjgl:1.7.2">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.7.2/74fbaa38a20ade3b497220922fe1b3a11b64dd69/gdx-backend-lwjgl-1.7.2.jar" />
+  </library>
+  <library name="Gradle: com.badlogicgames.gdx:gdx-box2d:1.7.2">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.7.2/275914cb71c76e4d3ce1e4037cf8a9cce8f7c842/gdx-box2d-1.7.2.jar" />
+  </library>
+  <library name="Gradle: com.badlogicgames.gdx:gdx-box2d-platform:1.7.2:natives-desktop">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d-platform/1.7.2/771fe31c57793621f2cc05f632cd9b068d1cf579/gdx-box2d-platform-1.7.2-natives-desktop.jar" />
+  </library>
+  <library name="Gradle: com.badlogicgames.gdx:gdx-freetype:1.7.2">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-freetype/1.7.2/2bd5374e7a6b9ea051ad27bbcf3bdbc3313bdac3/gdx-freetype-1.7.2.jar" />
+  </library>
+  <library name="Gradle: com.badlogicgames.gdx:gdx-freetype-platform:1.7.2:natives-desktop">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-freetype-platform/1.7.2/c8bbfe315fdbe80f06261371320c3631b10392d7/gdx-freetype-platform-1.7.2-natives-desktop.jar" />
+  </library>
+  <library name="Gradle: com.badlogicgames.gdx:gdx-platform:1.7.2:natives-desktop">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-platform/1.7.2/b17bc6d3c9bf6ff864b764277c4ccb7cab75be05/gdx-platform-1.7.2-natives-desktop.jar" />
+  </library>
+  <library name="Gradle: com.badlogicgames.jlayer:jlayer:1.0.1-gdx">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/com.badlogicgames.jlayer/jlayer/1.0.1-gdx/7cca83cec5c1b2f011362f4d85aabd71a73b049d/jlayer-1.0.1-gdx.jar" />
+  </library>
+  <library name="Gradle: net.java.jinput:jinput:2.0.5">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput/2.0.5/39c7796b469a600f72380316f6b1f11db6c2c7c4/jinput-2.0.5.jar" />
+  </library>
+  <library name="Gradle: net.java.jinput:jinput-platform:2.0.5:natives-linux">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput-platform/2.0.5/7ff832a6eb9ab6a767f1ade2b548092d0fa64795/jinput-platform-2.0.5-natives-linux.jar" />
+  </library>
+  <library name="Gradle: net.java.jinput:jinput-platform:2.0.5:natives-osx">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput-platform/2.0.5/53f9c919f34d2ca9de8c51fc4e1e8282029a9232/jinput-platform-2.0.5-natives-osx.jar" />
+  </library>
+  <library name="Gradle: net.java.jinput:jinput-platform:2.0.5:natives-windows">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/net.java.jinput/jinput-platform/2.0.5/385ee093e01f587f30ee1c8a2ee7d408fd732e16/jinput-platform-2.0.5-natives-windows.jar" />
+  </library>
+  <library name="Gradle: net.java.jutils:jutils:1.0.0">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/net.java.jutils/jutils/1.0.0/e12fe1fda814bd348c1579329c86943d2cd3c6a6/jutils-1.0.0.jar" />
+  </library>
+  <library name="Gradle: org.jcraft:jorbis:0.0.17">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/org.jcraft/jorbis/0.0.17/8872d22b293e8f5d7d56ff92be966e6dc28ebdc6/jorbis-0.0.17.jar" />
+  </library>
+  <library name="Gradle: org.lwjgl.lwjgl:lwjgl:2.9.2">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl/2.9.2/a9d80fe5935c7a9149f6584d9777cfd471f65489/lwjgl-2.9.2.jar" />
+  </library>
+  <library name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:2.9.2:natives-linux">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.2/d276cdf61fe2b516c7b7f4aa1b8dea91dbdc8d56/lwjgl-platform-2.9.2-natives-linux.jar" />
+  </library>
+  <library name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:2.9.2:natives-osx">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.2/d55b46b40b40249d627a83a7f7f22649709d70c3/lwjgl-platform-2.9.2-natives-osx.jar" />
+  </library>
+  <library name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:2.9.2:natives-windows">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl-platform/2.9.2/510c7d317f5e9e700b9cfaac5fd38bdebf0702e0/lwjgl-platform-2.9.2-natives-windows.jar" />
+  </library>
+  <library name="Gradle: org.lwjgl.lwjgl:lwjgl_util:2.9.2">
+    <archive path="/Users/ruimadeira/.gradle/caches/modules-2/files-2.1/org.lwjgl.lwjgl/lwjgl_util/2.9.2/4b9e37300a87799856e0bd15ed81663cdb6b0947/lwjgl_util-2.9.2.jar" />
+  </library>
+</eclipse-userlibraries>
+
