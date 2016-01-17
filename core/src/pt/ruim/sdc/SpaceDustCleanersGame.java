@@ -22,6 +22,8 @@ public class SpaceDustCleanersGame extends ApplicationAdapter {
         al.loadTexture("explosion.png");
         al.loadFontTTF("font-light.ttf", AssetLoader.FontSize.BIG);
         al.loadFontTTF("font-light.ttf", AssetLoader.FontSize.SMALL);
+		al.loadMusic("menuMusic.mp3");
+		al.loadMusic("gameMusic.mp3");
 
         sceneManager = new SceneManager();
 		sceneManager.goToScene(SceneManager.SceneType.MENU);

@@ -3,9 +3,11 @@ package pt.ruim.sdc.scenes;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.physics.box2d.World;
+import pt.ruim.sdc.AssetLoader;
 import pt.ruim.sdc.ColorUtils;
 import pt.ruim.sdc.LevelBuilder;
 import pt.ruim.sdc.factories.GameCameraFactory;
@@ -24,12 +26,19 @@ public class GameScene extends Scene {
 
     Engine engine;
     Color backgroundColor;
+    Music music;
 
     public GameScene(){
+        super(SceneManager.SceneType.GAME);
         engine = new Engine();
         createSystems();
         createEntities();
         backgroundColor = ColorUtils.fromRGB(20, 54, 56);
+        music = AssetLoader.getInstance().getMusic("gameMusic.mp3");
+        music.setLooping(true);
+        if(music.isPlaying() == false) {
+            music.play();
+        }
     }
 
     public void tick(){
@@ -40,7 +49,11 @@ public class GameScene extends Scene {
 
     @Override
     public void dispose() {
-
+        super.dispose();
+        if(willRestart == false) {
+            music.stop();
+            music.setPosition(0);
+        }
     }
 
     private void createSystems(){
@@ -62,8 +75,6 @@ public class GameScene extends Scene {
         engine.addSystem(new PlatformMonsterSys(physicsSys));
         engine.addSystem(new DogMonsterSys(physicsSys));
 
-
-
         DustSys dustSys = new DustSys(physicsSys);
         engine.addSystem(dustSys);
         ExplosionSys explosionSys = new ExplosionSys(physicsSys);
@@ -71,10 +82,13 @@ public class GameScene extends Scene {
         engine.addSystem(new CometSys(physicsSys, explosionSys, gc));
         engine.addSystem(new SpawnMarkSys());
 
-        engine.addSystem(new RenderSys(gc));
-
+        RenderSys renderSys = new RenderSys(gc);
+        engine.addSystem(renderSys);
 
         engine.addSystem(new GameManagerSys(dustSys, physicsSys, playerSys, monsterSys));
+
+        disposables.add(physicsSys);
+        disposables.add(renderSys);
     }
 
     private void createEntities(){

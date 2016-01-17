@@ -41,7 +41,7 @@ public class LevelBuilder {
             baseY += yAdd;
         }
 
-        createMonsters(world, worldScale);
+        createMonsters();
         createWalls();
 
         addToEngine(engine);
@@ -97,7 +97,7 @@ public class LevelBuilder {
         }
     }
 
-    private void createMonsters(World world, float worldScale){
+    private void createMonsters(){
         Entity top = platforms.peek();
         Entity platformMonster = monsterFactory.createPlatformMonster(top);
         monsters.add(platformMonster);
@@ -107,15 +107,11 @@ public class LevelBuilder {
             Entity m = monsterFactory.createPlatformMonster(bottom);
             monsters.add(m);
         }
-
-       /* float x = Gdx.graphics.getWidth() / 2;
-        Entity dogMonster = monsterFactory.createDogMonster(x, 1);
-        monsters.add(dogMonster);*/
     }
 
     private void createWalls(){
         float wallW = 25f;
-        float wallH = Gdx.graphics.getHeight();
+        float wallH = Gdx.graphics.getHeight() * 2;
         Rectangle rect = new Rectangle(-wallW, 0, wallW, wallH);
         Entity leftWall = platformFactory.createInvisibleWall(rect);
         walls.add(leftWall);

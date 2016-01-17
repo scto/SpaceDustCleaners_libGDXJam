@@ -15,7 +15,9 @@ public class SceneManager {
     }
 
     Scene currScene;
-    Array<Scene> toRemove;
+    SceneType nextScene;
+    boolean hasNextScene;
+    Array<Scene> toRemove, toAdd;
 
     public static SceneManager getSharedInstance(){
         return sharedInstance;
@@ -24,6 +26,7 @@ public class SceneManager {
     public SceneManager(){
         sharedInstance = this;
         toRemove = new Array<Scene>();
+        toAdd = new Array<Scene>();
     }
 
     public void tick(){
@@ -33,13 +36,17 @@ public class SceneManager {
             }
             toRemove.clear();
         }
+        if(hasNextScene){
+            currScene = allocScene(nextScene);
+            hasNextScene = false;
+        }
         if(currScene != null){
             currScene.tick();
         }
     }
 
     public void goToScene(SceneType type){
-        Scene s;
+        /*Scene s;
         switch(type){
             case GAME:
                 s = new GameScene();
@@ -54,7 +61,28 @@ public class SceneManager {
             toRemove.add(currScene);
         }
 
-        currScene = s;
+        currScene = s;*/
+        nextScene = type;
+        hasNextScene = true;
+        if(currScene != null){
+            if(currScene.getType() == type){
+                currScene.willRestartScene();
+            }
+            toRemove.add(currScene);
+        }
+    }
+
+    private Scene allocScene(SceneType type){
+        Scene s = null;
+        switch(type){
+            case GAME:
+                s = new GameScene();
+                break;
+            case MENU:
+                s = new MenuScene();
+                break;
+        }
+        return s;
     }
 
 

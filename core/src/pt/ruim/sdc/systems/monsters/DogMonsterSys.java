@@ -96,6 +96,7 @@ public class DogMonsterSys extends IteratingSystem implements ContactListener{
             if(x < 0 || x > Gdx.graphics.getWidth()){
                 RemoveComp r = entity.getComponent(RemoveComp.class);
                 r.remove = true;
+                return;
             }
         }
         if(dm.standCountdown > 0){
@@ -144,14 +145,26 @@ public class DogMonsterSys extends IteratingSystem implements ContactListener{
                 }
             } else if(wall != null){
                 //System.out.println("DogMonsterSys - dog hit wall");
+                BodyComp wallBody = wall.getComponent(BodyComp.class);
+                Vector2 wallPos = wallBody.body.getPosition();
+                wallPos.scl(wallBody.invWorldScale);
                 MonsterMovementComp mm = monster.getComponent(MonsterMovementComp.class);
                 DogMonsterComp dm = monster.getComponent(DogMonsterComp.class);
-                if(mm.moveType == MonsterMovementComp.MoveType.LEFT){
+               /* if(mm.moveType == MonsterMovementComp.MoveType.LEFT){
                     mm.moveType = MonsterMovementComp.MoveType.RIGHT;
                 } else {
                     mm.moveType = MonsterMovementComp.MoveType.LEFT;
+                }*/
+                mm.moveType = MonsterMovementComp.MoveType.STAND;
+                dm.standCountdown = dm.standDuration;
+
+                //is left wall
+                if(wallPos.x < 0){
+                    dm.prevMoveType = MonsterMovementComp.MoveType.RIGHT;
+                } else {
+                    dm.prevMoveType = MonsterMovementComp.MoveType.LEFT;
                 }
-                dm.prevMoveType = mm.moveType;
+                //dm.prevMoveType = mm.moveType;
             }
         }
     }

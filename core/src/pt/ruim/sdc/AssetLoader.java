@@ -1,6 +1,7 @@
 package pt.ruim.sdc;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeType;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.utils.ArrayMap;
 public class AssetLoader {
     ArrayMap<String, Texture> textures;
     ArrayMap<FontSize, BitmapFont> fonts;
+    ArrayMap<String, Music> musics;
 
     public enum FontSize{
         SMALL, BIG
@@ -30,14 +32,18 @@ public class AssetLoader {
 
     private AssetLoader(){
         textures = new ArrayMap<String, Texture>();
-
         fonts = new ArrayMap<FontSize, BitmapFont>();
+        musics = new ArrayMap<String, Music>();
     }
 
     public Texture loadTexture(String file){
         Texture t = new Texture(Gdx.files.internal(file));
         textures.put(file, t);
         return t;
+    }
+
+    public Texture getTexture(String file){
+        return textures.get(file);
     }
 
     public BitmapFont loadFontTTF(String file, FontSize size){
@@ -56,8 +62,14 @@ public class AssetLoader {
         return fonts.get(size);
     }
 
-    public Texture getTexture(String file){
-        return textures.get(file);
+    public Music loadMusic(String file){
+        Music m = Gdx.audio.newMusic(Gdx.files.internal(file));
+        musics.put(file, m);
+        return m;
+    }
+
+    public Music getMusic(String file){
+        return musics.get(file);
     }
 
     private int getFontSize(FontSize size){

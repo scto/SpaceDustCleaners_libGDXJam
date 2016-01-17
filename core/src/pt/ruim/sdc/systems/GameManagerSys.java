@@ -104,6 +104,10 @@ public class GameManagerSys extends EntitySystem implements EntityListener, Cont
         for(int i=0; i<labels.size; i++){
             getEngine().addEntity(labels.get(i));
         }
+
+        progress = 1f;
+        ProgressRectComp pr = progressRect.getComponent(ProgressRectComp.class);
+        pr.progress = 1f;
     }
 
     public void update(float deltaTime){
@@ -116,15 +120,13 @@ public class GameManagerSys extends EntitySystem implements EntityListener, Cont
             progress = (float)dustCollected / (float)totalDustCreated;
             if(progressRect != null){
                 ProgressRectComp pr = progressRect.getComponent(ProgressRectComp.class);
-                //pr.progress = progress;
                 pr.progress += (progress - pr.progress) * pr.interp * deltaTime;
                 pr.fillBounds.width = pr.backBounds.width * pr.progress;
             }
             if(progressLabel != null){
                 TextComp t = progressLabel.getComponent(TextComp.class);
                 int num = (int)(progress * 100f);
-                String txt = "" + num + "%";
-                t.text = txt;
+                t.text = "" + num + "%";
             }
         }
         if(haltAndKillPlayer){
@@ -187,6 +189,9 @@ public class GameManagerSys extends EntitySystem implements EntityListener, Cont
 
     @Override
     public void beginContact(Contact contact) {
+        if(gameOver){
+            return;
+        }
         Entity player = PhysicsSys.getEntityFromBodyData(UserData.Type.PLAYER, contact);
         if(player == null){
             return;

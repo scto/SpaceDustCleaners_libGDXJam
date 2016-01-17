@@ -41,7 +41,7 @@ public class RenderSys extends EntitySystem implements Disposable, EntityListene
 
     GlyphLayout glyphLayout;
 
-    public boolean debugRender;
+    public boolean debugRender = false;
 
     public RenderSys(GameCameraSys gameCameraSys){
         this.gameCameraSys = gameCameraSys;
@@ -101,6 +101,7 @@ public class RenderSys extends EntitySystem implements Disposable, EntityListene
     @Override
     public void dispose() {
         spriteBatch.dispose();
+        box2dDebugRenderer.dispose();
     }
 
     private void renderTextures(ImmutableArray<Entity> entities){

@@ -49,8 +49,6 @@ public class PhysicsSys extends IteratingSystem implements Disposable, ContactLi
 
     private static Family family = Family.all(BodyComp.class, TextureComp.class).get();
 
-    ComponentMapper<BodyComp> bm;
-    ComponentMapper<TextureComp> tm;
     Array<ContactListener> listeners;
 
     World world;
@@ -64,9 +62,6 @@ public class PhysicsSys extends IteratingSystem implements Disposable, ContactLi
         world = new World(new Vector2(0, -500f), true);
         worldScale = 0.1f;
         timeStep = 1.0f/60.0f;
-
-        bm = ComponentMapper.getFor(BodyComp.class);
-        tm = ComponentMapper.getFor(TextureComp.class);
 
         listeners = new Array<ContactListener>();
         world.setContactListener(this);
@@ -90,12 +85,12 @@ public class PhysicsSys extends IteratingSystem implements Disposable, ContactLi
 
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
-        BodyComp b = bm.get(entity);
+        BodyComp b = entity.getComponent(BodyComp.class);
         if(b.body.isActive() && b.updateTextureTransform){
             Vector2 pos = b.body.getPosition();
             float x = pos.x * b.invWorldScale;
             float y = pos.y * b.invWorldScale;
-            TextureComp t = tm.get(entity);
+            TextureComp t = entity.getComponent(TextureComp.class);
             t.transform.idt();
             t.transform.translate(x, y, 0);
             if(b.body.isFixedRotation() == false) {
