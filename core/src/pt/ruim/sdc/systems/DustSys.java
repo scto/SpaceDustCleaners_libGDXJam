@@ -56,8 +56,8 @@ public class DustSys extends IteratingSystem implements ContactListener{
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
         DustComp d = entity.getComponent(DustComp.class);
-        d.counter += d.counterAdd;
-        float alpha = MathUtils.sin(d.counter) * 0.5f + 0.5f;
+        d.counter += d.counterAdd * deltaTime;
+        float alpha = Math.abs(MathUtils.sin(d.counter)) * 0.25f + 0.5f;
         TextureComp t = entity.getComponent(TextureComp.class);
         t.color.a = alpha;
         BodyComp b = entity.getComponent(BodyComp.class);

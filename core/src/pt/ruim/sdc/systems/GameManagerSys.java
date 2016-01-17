@@ -116,17 +116,19 @@ public class GameManagerSys extends EntitySystem implements EntityListener, Cont
         } else {
             if(gameOver == false) {
                 gameDuration += deltaTime;
-            }
-            progress = (float)dustCollected / (float)totalDustCreated;
-            if(progressRect != null){
-                ProgressRectComp pr = progressRect.getComponent(ProgressRectComp.class);
-                pr.progress += (progress - pr.progress) * pr.interp * deltaTime;
-                pr.fillBounds.width = pr.backBounds.width * pr.progress;
-            }
-            if(progressLabel != null){
-                TextComp t = progressLabel.getComponent(TextComp.class);
-                int num = (int)(progress * 100f);
-                t.text = "" + num + "%";
+
+                progress = (float) dustCollected / (float) totalDustCreated;
+                if (progressRect != null) {
+                    ProgressRectComp pr = progressRect.getComponent(ProgressRectComp.class);
+                    pr.progress += (progress - pr.progress) * pr.interp * deltaTime;
+                    pr.fillBounds.width = pr.backBounds.width * pr.progress;
+                }
+                if (progressLabel != null) {
+                    TextComp t = progressLabel.getComponent(TextComp.class);
+                    int num = (int) (progress * 100f);
+                    t.text = "" + num + "%";
+
+                }
             }
         }
         if(haltAndKillPlayer){
